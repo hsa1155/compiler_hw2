@@ -1,6 +1,9 @@
 int main()
 {
-    int x,y,z;
+    int x=6;
+    int y=x;
+    int z;
+
 
     x=y+=z-=y*=x;
 

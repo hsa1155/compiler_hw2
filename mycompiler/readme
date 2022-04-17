@@ -12,3 +12,4 @@ make clean -> make run1 ->make run2 ->make run3
 照以上順序在terminal執行即可依序測試3個檔案
 為了減少過多不必要的輸出 在.g檔中memeber 有一個SUPER_TRACEON 預設是false 
 如果想看更詳細的輸出的話可以手動改成true再重新編譯（當然不建議 因為會很亂很長）
+對於rule的描述在subset的文檔中

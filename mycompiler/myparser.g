@@ -24,9 +24,9 @@ parameter_decelartion
 	:(decelartion)(','decelartion)* {if (TRACEON) System.out.println("parameter_decelartion : (decelartion)(','decelartion)*");}
 	;  
 
-//var_decelartion_prefix*  decelartion (('=' (arith_expr))?| ('['arith_expr ']' )+        )';'
+//var_decelartion_prefix*  BASIC_TYPE '*'* arith_expr      ';'
 var_decelartion
-	:var_decelartion_prefix*  BASIC_TYPE '*'* arith_expr      ';'{if (TRACEON) System.out.println("var_decelartion_prefix* decelartion (('='(arith_expr))?|('['arith_expr ']')+)';'");}
+	:var_decelartion_prefix*  decelartion (('=' (arith_expr))?| ('['arith_expr ']' )+        )';'{if (TRACEON) System.out.println("var_decelartion:var_decelartion_prefix* decelartion (('='(arith_expr))?|('['arith_expr ']')+)';'");}
 	;
 
 
@@ -316,6 +316,7 @@ COLON
     :':'
     ;
 
+
 SEMI_COLON
     :';'
     ;
@@ -340,35 +341,7 @@ QUESTION
   	:'=='
   	|'!='
   	;
-/*
-LOGICAL_OPERATOR
-    :'!'
-    |'||'
-    |'&&'
-    ;
 
-
-    INDECREASE
-  	:'++'
-  	|'--'	
-  	;
-  	
- BITWISE_OPERATOR
-    :'|'
-    |'&'
-    |'~'
-    |'^'
-    ;
-
-MATH_OPERATOR
-    :'+'
-    |'-'
-    |'/'
-    |'*'
-    |'%'
-    ;
-
-*/
 SHIFT_OPERATOR
     :'<<'
     |'>>'
@@ -397,7 +370,61 @@ ASSIGN_OPERATOR
     |'>>='
     ;
     
- 
+ PLUSPLUS
+    :'++'
+    ;
+
+PLUS
+    :'+'
+    ;
+
+MINUSMINUS
+    :'--'
+    ;
+
+MINUS
+    :'-'
+    ;
+
+DIVIDE
+    :'/'
+    ;
+
+MOD
+    :'%'
+    ;
+
+MULT
+    :'*'
+    ;
+
+OROR
+    :'||'
+    ;
+
+OR
+    :'|'
+    ;
+
+ANDAND
+    :'&&'
+    ;
+
+AND
+    :'&'
+    ;
+
+NOT
+    :'~'
+    ;
+
+XOR
+    :'^'
+    ;
+
+WOW
+    :'!'
+    ;
 
 ID
 	:	LETTER (LETTER|DIGIT)*
@@ -439,3 +466,32 @@ OctalEscape
  
 
 
+/*
+LOGICAL_OPERATOR
+    :'!'
+    |'||'
+    |'&&'
+    ;
+
+
+    INDECREASE
+  	:'++'
+  	|'--'	
+  	;
+  	
+ BITWISE_OPERATOR
+    :'|'
+    |'&'
+    |'~'
+    |'^'
+    ;
+
+MATH_OPERATOR
+    :'+'
+    |'-'
+    |'/'
+    |'*'
+    |'%'
+    ;
+
+*/

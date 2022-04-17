@@ -56,4 +56,6 @@ int main(){
 
     return 0;
 
+    sizeof(x);
+
 }
